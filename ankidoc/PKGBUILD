@@ -1,0 +1,23 @@
+# Maintainer: Timo Früh <dev@tifrueh.ch>
+pkgname=ankidoc
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="convert asciidoc notes to anki notes"
+arch=('x86_64' 'aarch64')
+url="https://github.com/tifrueh/ankidoc/"
+license=('GPL-3.0-or-later')
+depends=('asciidoctor')
+makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
+provides=('ankidoc')
+source=("https://github.com/tifrueh/$pkgname/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('7ef0812a1d9d19d97b316d400e768c52c5b639033b747b16d88605da6ca865d2')
+
+build() {
+	cd "$pkgname-$pkgver"
+	python -m build --wheel --no-isolation
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+	python -m installer --destdir="$pkgdir" dist/*.whl
+}
