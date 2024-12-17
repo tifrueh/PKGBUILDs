@@ -10,7 +10,7 @@ depends=('asciidoctor')
 makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
 provides=('ankidoc')
 source=("https://github.com/tifrueh/$pkgname/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('7ef0812a1d9d19d97b316d400e768c52c5b639033b747b16d88605da6ca865d2')
+sha256sums=('42f6ca414239b3191834e569033251d314afa518a866a44d072e6e1174bfc66d')
 
 build() {
 	cd "$pkgname-$pkgver"
