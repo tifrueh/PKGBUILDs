@@ -1,6 +1,6 @@
 # Maintainer: Timo Früh <dev@tifrueh.ch>
 pkgname=ankidoc
-pkgver=0.3.0_rc1
+pkgver=0.3.0_rc3
 pkgrel=1
 pkgdesc="convert asciidoc notes to anki notes"
 arch=('x86_64' 'aarch64')
@@ -10,7 +10,7 @@ depends=('asciidoctor')
 makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel' 'python-setuptools-scm')
 provides=('ankidoc')
 source=("https://github.com/tifrueh/$pkgname/archive/refs/tags/v${pkgver//_/-}.tar.gz")
-sha256sums=('ece12b96d6ae4a6130bc998ace08cd95cab7cd4b1fc3ee6b70e6f63034783c91')
+sha256sums=('9b91eb7b73664b16506db0525b738eea9520f15bdddfc58b976bc344a5d0805d')
 
 build() {
 	cd "$pkgname-${pkgver//_/-}"
