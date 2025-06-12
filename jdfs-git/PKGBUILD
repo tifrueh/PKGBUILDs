@@ -1,0 +1,30 @@
+# Maintainer: Timo Früh <dev@tifrueh.ch>
+_name=jdfs
+pkgname=$_name-git
+pkgver=0.1.0.r4.gf2ea446
+pkgrel=1
+pkgdesc="navigation and manipulation tool for johnny.decimal file systems"
+arch=('x86_64' 'aarch64' 'armv7h')
+url="https://github.com/tifrueh/jdfs"
+license=('GPL-3.0-or-later')
+makedepends=('meson' 'git')
+conflicts=('jdfs')
+provides=('jdfs')
+source=("git+https://github.com/tifrueh/jdfs.git#branch=development")
+sha256sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/$_name"
+	git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+	cd "$srcdir/$_name"
+	meson setup --prefix=/usr --buildtype=plain build
+	meson compile -C build
+}
+
+package() {
+	cd "$srcdir/$_name"
+	meson install --destdir="$pkgdir" -C build
+}
