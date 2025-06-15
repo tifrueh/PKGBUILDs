@@ -1,7 +1,7 @@
 # Maintainer: Timo Früh <dev@tifrueh.ch>
 pkgname=jdfs
-pkgver=0.1.0
-pkgrel=2
+pkgver=0.1.1
+pkgrel=1
 pkgdesc="navigation and manipulation tool for johnny.decimal file systems"
 arch=('x86_64' 'aarch64' 'armv7h')
 url="https://github.com/tifrueh/jdfs"
@@ -11,7 +11,7 @@ provides=('jdfs')
 conflicts=('jdfs-git')
 validpgpkeys=('E9BB53C187AA1E3F2AE75E6A01C2E4F60B512727' '84B8587424CF67D81C4F2C95468994F8BA7513C0')
 source=("git+https://github.com/tifrueh/$pkgname.git#tag=v$pkgver?signed")
-sha256sums=('c0c99a677a5304ef9c84f1033b82c5c1930861f7ca6903e54a056edab96ab95a')
+sha256sums=('31e284e402cc44bdb711ebb73865618595989b2fb25d9f7035e2700df2e85387')
 
 build() {
 	cd "$srcdir/$pkgname"
