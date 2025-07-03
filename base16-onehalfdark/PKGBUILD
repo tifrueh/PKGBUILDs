@@ -1,0 +1,18 @@
+# Maintainer: Timo Früh <dev@tifrueh.ch>
+pkgname=base16-onehalfdark
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Base16 onehalfdark colors for setvtrgb"
+arch=(any)
+url="https://github.com/tifrueh/base16-onehalfdark"
+license=('MIT')
+source=("git+https://github.com/tifrueh/base16-onehalfdark.git")
+sha256sums=('SKIP')
+validpgpkeys=('E9BB53C187AA1E3F2AE75E6A01C2E4F60B512727' '84B8587424CF67D81C4F2C95468994F8BA7513C0')
+
+package() {
+	cd "$srcdir/$pkgname"
+        install -d "$pkgdir/usr/share/kbd/consolecolors/"
+        install -m '0644' 'base16-onehalfdark.hex' "$pkgdir/usr/share/kbd/consolecolors/"
+        install -m '0644' 'base16-onehalfdark.vga' "$pkgdir/usr/share/kbd/consolecolors/"
+}
