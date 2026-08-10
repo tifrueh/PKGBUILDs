@@ -1,6 +1,6 @@
 # Maintainer: Timo Früh <dev@tifrueh.ch>
 pkgname=md2atxt
-pkgver=0.2.1
+pkgver=0.3.0
 pkgrel=0
 pkgdesc="convert Markdown notes to Anki notes"
 arch=(any)
@@ -11,7 +11,7 @@ makedepends=('python-build' 'python-installer' 'python-hatchling' 'python-hatch-
 checkdepends=('python-hatch')
 provides=('md2atxt')
 source=("https://github.com/tifrueh/$pkgname/archive/refs/tags/v${pkgver//_/-}.tar.gz")
-sha256sums=('5189699b1410c94801144176a4dc624a5dc09d42d1ca7a99edb8d70954353d9f')
+sha256sums=('4446531f7d81fd54fa53808a74828ce13d3e806a8e601ba86517e79f1a048676')
 
 build() {
 	cd "$pkgname-${pkgver//_/-}"
