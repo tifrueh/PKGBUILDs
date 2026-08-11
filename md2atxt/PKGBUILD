@@ -1,6 +1,6 @@
 # Maintainer: Timo Früh <dev@tifrueh.ch>
 pkgname=md2atxt
-pkgver=0.3.0
+pkgver=0.3.1
 pkgrel=0
 pkgdesc="convert Markdown notes to Anki notes"
 arch=(any)
@@ -10,21 +10,21 @@ depends=('pandoc')
 makedepends=('python-build' 'python-installer' 'python-hatchling' 'python-hatch-vcs')
 checkdepends=('python-hatch')
 provides=('md2atxt')
-source=("https://github.com/tifrueh/$pkgname/archive/refs/tags/v${pkgver//_/-}.tar.gz")
-sha256sums=('4446531f7d81fd54fa53808a74828ce13d3e806a8e601ba86517e79f1a048676')
+source=("git+https://github.com/tifrueh/$pkgname.git#tag=v${pkgver//_/-}?signed")
+validpgpkeys=('30AB157E6A7CA2EEBAA924F75152BE9A85F22FB5')
+sha256sums=('78cf0d93726c33ec4fb53b2651563967dd3f65a0a79b11ba13f0af8a7a09d032')
 
 build() {
-	cd "$pkgname-${pkgver//_/-}"
-	export SETUPTOOLS_SCM_PRETEND_VERSION="v${pkgver//_/-}"
+	cd "$pkgname"
 	python -m build --wheel --no-isolation
 }
 
 check() {
-	cd "$pkgname-${pkgver//_/-}"
+	cd "$pkgname"
 	python -m hatch test
 }
 
 package() {
-	cd "$pkgname-${pkgver//_/-}"
+	cd "$pkgname"
 	python -m installer --destdir="$pkgdir" dist/*.whl
 }
