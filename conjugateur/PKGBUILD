@@ -1,7 +1,7 @@
 # Maintainer: Timo Früh <dev@tifrueh.ch>
 pkgname=conjugateur
 gh_name=conjugator
-pkgver=1.0.5
+pkgver=1.0.6
 pkgrel=0
 pkgdesc="French verb conjugation trainer"
 arch=('x86_64' 'aarch64')
@@ -10,7 +10,7 @@ license=('GPL-3.0-or-later')
 depends=('wxwidgets')
 makedepends=('meson')
 source=("https://github.com/tifrueh/$gh_name/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('dfbe69c9e8deb7c6b37e80158f54b0255082a01ff83f82f6087e3405c6e6bb44')
+sha256sums=('9d07e68a3676e480f5fe8277939234db387f2b9e0bdb105db51cdd2aabf5fc58')
 
 build() {
 	cd "$gh_name-$pkgver"
